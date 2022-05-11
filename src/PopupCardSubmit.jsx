@@ -1,16 +1,13 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { string } from "yup";
 import Button from "./Button";
-import popup from "./app";
 import useForm from "./useForm";
 function PopupCardSubmit({ id }, props) {
   const [errorMsg, setErrorMsg] = useState("");
   let isUrlValid = false;
   const submitAssignment = (event) => {
     event.preventDefault();
-    // const { submitPopup, updateSubmitPopup } = props.popup;
-    // const [inputUrl, updateInputUrl] = useState("");
     console.log(formData);
     try {
       const websiteValidator = string().url("url is not valid");
