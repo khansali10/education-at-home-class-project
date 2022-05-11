@@ -1,0 +1,43 @@
+import React from "react";
+
+export const lectureData = [
+  {
+    id: 3,
+    topic: "Basic HTML CSS",
+    start_time: "2021-12-13T05:32:40.000Z",
+    end_time: "2021-12-13T08:37:25.000Z",
+    recording_url: "https://youtu.be/IA8JWGP13dI",
+    batch_id: 1,
+    created_at: "2021-12-15T14:46:50.950+00:00",
+    updated_at: "2021-12-15T14:46:50.950+00:00",
+    uuid: null,
+    deleted_at: null,
+    attendances: [],
+  },
+  {
+    id: 4,
+    topic: "Tailwind CSS",
+    start_time: "2021-12-15T05:33:33.000Z",
+    end_time: "2021-12-15T08:53:43.000Z",
+    recording_url: "https://youtu.be/L4_jarMnB0c",
+    batch_id: 1,
+    created_at: "2021-12-15T14:48:32.428+00:00",
+    updated_at: "2021-12-17T05:24:38.586+00:00",
+    uuid: null,
+    deleted_at: null,
+    attendances: [],
+  },
+  {
+    id: 5,
+    topic: "- Javascript. \n- Javascript Loops \n- Utitlity Classes",
+    start_time: "2021-12-17T05:32:29.000Z",
+    end_time: "2021-12-17T08:56:20.000Z",
+    recording_url: "https://youtu.be/hKB-YGF14SY",
+    batch_id: 1,
+    created_at: "2021-12-17T12:29:18.128+00:00",
+    updated_at: "2022-01-15T04:15:31.183+00:00",
+    uuid: null,
+    deleted_at: null,
+    attendances: [],
+  },
+];
