@@ -4,22 +4,28 @@ import { string } from "yup";
 import Button from "./Button";
 import useForm from "./useForm";
 function PopupCardSubmit({ id }, props) {
-  const [errorMsg, setErrorMsg] = useState("");
   let isUrlValid = false;
+  const [errorMsg, setErrorMsg] = useState("");
   const submitAssignment = (event) => {
-    event.preventDefault();
     console.log(formData);
     try {
-      const websiteValidator = string().url("url is not valid");
+      const websiteValidator = string()
+        .url("url is not valid")
+        .matches(
+          /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
+          "Enter correct url!"
+        )
+        .required("Please enter website");
       isUrlValid = websiteValidator.isValidSync(formData.submission_url);
       console.log("isUrlValid ", isUrlValid);
 
       websiteValidator.validateSync(formData.submission_url);
       const data = formData.submission_url;
-
+      console.log("data ", data);
       axios
         .put(
           `https://api.codeyogi.io/assignment/${id}/submit`,
+
           { submissionLink: data },
           { withCredentials: true }
         )
@@ -29,7 +35,9 @@ function PopupCardSubmit({ id }, props) {
       setErrorMsg("");
     } catch (e) {
       console.log("unsuccessful");
+
       setErrorMsg(e.message);
+
       return;
     }
   };
@@ -56,11 +64,11 @@ function PopupCardSubmit({ id }, props) {
                   Submission Link
                 </label>
                 <input
-                  type="url"
+                  type="text"
                   name="submission_url"
                   value={formData.submission_url}
                   id="submission_url"
-                  className="w-3/4 p-3 border border-slate-400 bg-slate-50"
+                  className="w-3/4 p-3 border border-slate-400 bg-slate-50 placeholder:text-lg"
                   placeholder="Submission Link"
                   onChange={handleChangeInput}
                 />
@@ -68,7 +76,7 @@ function PopupCardSubmit({ id }, props) {
               </form>
             </div>
             <div className="text-red-600  h-12 text-center">
-              {!isUrlValid && errorMsg}
+              {errorMsg && errorMsg}
             </div>
           </div>
         </div>

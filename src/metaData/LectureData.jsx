@@ -2,7 +2,7 @@ import React from "react";
 
 export const lectureData = [
   {
-    id: 3,
+    id: 1,
     topic: "Basic HTML CSS",
     start_time: "2021-12-13T05:32:40.000Z",
     end_time: "2021-12-13T08:37:25.000Z",
@@ -15,7 +15,7 @@ export const lectureData = [
     attendances: [],
   },
   {
-    id: 4,
+    id: 2,
     topic: "Tailwind CSS",
     start_time: "2021-12-15T05:33:33.000Z",
     end_time: "2021-12-15T08:53:43.000Z",
@@ -28,7 +28,7 @@ export const lectureData = [
     attendances: [],
   },
   {
-    id: 5,
+    id: 3,
     topic: "- Javascript. \n- Javascript Loops \n- Utitlity Classes",
     start_time: "2021-12-17T05:32:29.000Z",
     end_time: "2021-12-17T08:56:20.000Z",

@@ -10,8 +10,8 @@ import AssignDetail from "./AssignDetail";
 // export const popup = { submitPopup, updateSubmitPopup };
 
 function AssignContentDetailsCard(params) {
-  const { id, title, due_date, created_at, submissions } = params.pass;
   const [submitPopup, updateSubmitPopup] = useState(false);
+  const { id, title, due_date, created_at, submissions } = params.pass;
   const [showSubmissionButton, updateShowSubmissionButton] = useState(false);
   const [submitButton, changeSubmitButton] = useState("Submit");
   const [isSubmitted, changeIsSubmitted] = useState(
