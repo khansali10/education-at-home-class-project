@@ -10,32 +10,25 @@ import UserPage from "./UserPage";
 import Logout from "./Logout";
 import NotFound from "./NotFound";
 import ProfilePage from "./ProfilePage";
-import AdminLogin from "./AdminLogin";
 function App() {
   return (
     <>
       <div className="flex items-stretch ">
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/student" element={<MainLayout />}>
-            <Route path="/student" element={<LecturePage />} />
-            <Route path="/student/assignment" element={<AssignmentPage />} />
+          <Route path="/" element={<MainLayout />}>
+            <Route path="/" element={<LecturePage />} />
+            <Route path="/assignment" element={<AssignmentPage />} />
             <Route
-              path="/student/assignment/:id/assignmentdetail"
+              path="/assignment/:id/assignmentdetail"
               element={<AssignDetail />}
             />
-            <Route path="/student/lecture" element={<LecturePage />} />
-            <Route path="/student/user" element={<UserPage />} />
-            <Route path="/student/profile" element={<ProfilePage />} />
-            <Route path="/student/logout" element={<Logout />} />
+            <Route path="/lecture" element={<LecturePage />} />
+            <Route path="/user" element={<UserPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/logout" element={<Logout />} />
 
-            <Route
-              path="/student/quiz"
-              element={<QuizPage username="sachin" />}
-            />
+            <Route path="/quiz" element={<QuizPage username="sachin" />} />
           </Route>
-
-          <Route path="/admin" element={<AdminLogin />}></Route>
 
           <Route path="*" element={<NotFound />} />
         </Routes>
